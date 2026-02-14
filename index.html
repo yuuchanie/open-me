@@ -86,7 +86,19 @@ form.classList.add('hidden');
 final.classList.remove('hidden');
 result.innerText=`Yeayyy, kita nge-date ya di ${p} tanggal ${d}`;
 }
+
+  // PLAY MUSIC AFTER CLICK YES
+document.getElementById("yes").addEventListener("click", function(){
+  document.getElementById("bgm").play();
+});
+
+
 </script>
 
 </body>
+  
+  <audio id="bgm" autoplay loop>
+  <source src="perfect.mp3" type="audio/mpeg">
+</audio>
+
 </html>
