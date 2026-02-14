@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AYOOKK KITA NGE-DATE</title>
+<style>
+body{margin:0;font-family:Arial;background:linear-gradient(135deg,#ffd6e8,#d6e8ff);display:flex;justify-content:center;align-items:center;height:100vh;overflow:hidden}
+.card{background:#fff;padding:30px;border-radius:20px;text-align:center;max-width:400px;box-shadow:0 0 20px rgba(0,0,0,.1)}
+button{padding:12px 25px;border:none;border-radius:12px;font-size:16px;margin:10px;cursor:pointer}
+#yes{background:#ff9acb;color:#fff}
+#no{background:#bcd7ff}
+.hidden{display:none}
+.fade{animation:fade .5s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+</style>
+</head>
+<body>
+
+<div class="card" id="page1">
+<div id="cat" style="font-size:100px">😺</div>
+<h2>ddy ❤️</h2>
+<h1>AYOOKK KITA NGE-DATE</h1>
+<button id="yes">YA</button>
+<button id="no">TIDAK</button>
+</div>
+
+<div class="card hidden" id="transition">
+<h1>💖💖💖</h1>
+<div style="font-size:80px">😻</div>
+<button id="klik">KLIK AKU</button>
+</div>
+
+<div class="card hidden" id="letter">
+<h2>Surat dari Istri 💌</h2>
+<p>Hallo ddy💖,
+Makasih ya udah selalu jadi rumah buat aku, tempat aku manja, tempat cerita, tempat aku minta jajan😻. Walau kamu bucuk acam, sering kentut dan jarang mandi aku tetap sayang kamu hehe 💖</p>
+<button id="more">Masih ada lagi</button>
+</div>
+
+<div class="card hidden" id="form">
+<h2>Nge-date dimana & kapan?</h2>
+<input id="place" placeholder="Tempat"/><br><br>
+<input id="date" type="date"/><br><br>
+<button id="done">DONE</button>
+</div>
+
+<div class="card hidden" id="final">
+<h1>YEAYYY 🥳</h1>
+<p id="result"></p>
+<p>Jangan lupa mandii 🛁<br>Big love from your wife Yullyra 💕</p>
+</div>
+
+<script>
+let noTexts=["Yakin gak mau?","Nanti yully marah loh","Gak boleh nolak","Gak mau"]; 
+let cats=["😾","🥺","😠","😿"]; 
+let count=0;
+
+no.onclick=()=>{
+no.innerText=noTexts[count];
+cat.innerText=cats[count];
+count=(count+1)%noTexts.length;
+no.style.position='absolute';
+no.style.left=Math.random()*200+'px';
+no.style.top=Math.random()*200+'px';
+}
+
+yes.onclick=()=>{
+page1.classList.add('hidden');
+transition.classList.remove('hidden');
+}
+
+klik.onclick=()=>{
+transition.classList.add('hidden');
+letter.classList.remove('hidden');
+}
+
+more.onclick=()=>{
+letter.classList.add('hidden');
+form.classList.remove('hidden');
+}
+
+done.onclick=()=>{
+let p=place.value;
+let d=date.value;
+form.classList.add('hidden');
+final.classList.remove('hidden');
+result.innerText=`Yeayyy, kita nge-date ya di ${p} tanggal ${d}`;
+}
+</script>
+
+</body>
+</html>
